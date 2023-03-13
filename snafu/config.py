@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """Tools for setting up config arguments."""
 import argparse
 import os
@@ -77,7 +76,8 @@ class FuncAction(argparse.Action):
     'my_input_this_is_my_string'
     """
 
-    def func(self, arg: Any) -> Any:
+    @staticmethod
+    def func(arg: Any) -> Any:
         """Overwrite me."""
 
     def __call__(

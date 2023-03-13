@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """Wrapper for running the uperf benchmark. See http://uperf.org/ for more information."""
 import dataclasses
 import datetime
 import re
-import sys
 import shlex
+import sys
 from typing import Any, Dict, Iterable, List, Optional, Tuple, Union
 
 import numpy as np
@@ -387,6 +386,7 @@ class Uperf(Benchmark):
         self.logger.info(f"Successfully collected {self.config.sample} sample{_plural} of Uperf.")
 
     @staticmethod
+    # pylint: disable-next=arguments-differ
     def cleanup() -> bool:
         """Uperf doesn't have any cleanup tasks, therefore this method just returns ``True``."""
         return True
